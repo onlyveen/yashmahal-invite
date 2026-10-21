@@ -1,0 +1,457 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<title>Yash Mahal Gruhapravesham</title>
+<style>
+@font-face{font-family:'Great Vibes';src:url(node_modules/@fontsource/great-vibes/files/great-vibes-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:Lora;font-weight:400;src:url(node_modules/@fontsource/lora/files/lora-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:Lora;font-weight:400;font-style:italic;src:url(node_modules/@fontsource/lora/files/lora-latin-400-italic.woff2) format('woff2')}
+@font-face{font-family:Lora;font-weight:500;font-style:italic;src:url(node_modules/@fontsource/lora/files/lora-latin-500-italic.woff2) format('woff2')}
+@font-face{font-family:Lora;font-weight:600;src:url(node_modules/@fontsource/lora/files/lora-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:Cinzel;font-weight:600;src:url(node_modules/@fontsource/cinzel/files/cinzel-latin-600-normal.woff2) format('woff2')}
+:root{--maroon:#7a1d2b;--green:#2f5a3a;--gold:#a87d2c;--deepgold:#8a5d1a;--ink:#3a2a22}
+html,body{margin:0;background:#111}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:#f7f0e2 url(../art/paper.jpg);font-family:Lora,serif;color:var(--ink)}
+.layer{position:absolute;inset:0;pointer-events:none}
+.scene{position:absolute;inset:0;opacity:0}
+.col{position:absolute;left:96px;right:96px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.vc{top:206px!important;bottom:64px;justify-content:center}
+.script{font-family:'Great Vibes',cursive;font-weight:400;line-height:1.05}
+.caps{font-family:Cinzel,serif;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.it{font-style:italic}
+.maroon{color:var(--maroon)}.green{color:var(--green)}.gold{color:var(--gold)}
+.name{font-weight:600;color:var(--maroon);font-size:54px;line-height:1.22}
+.body{font-size:40px;line-height:1.45}
+.art svg{display:block;width:100%;height:auto}
+.divider{width:520px;color:var(--gold)}
+.wipe-up{-webkit-mask-image:linear-gradient(to top,#000 0%,#000 calc(var(--p) - 9%),transparent calc(var(--p) + 9%));--p:-10%}
+.wipe-right{-webkit-mask-image:linear-gradient(to right,#000 0%,#000 calc(var(--p) - 7%),transparent calc(var(--p) + 7%));--p:-10%}
+/* door */
+#doorway{position:absolute;left:300px;top:700px;width:480px;height:845px;overflow:hidden;perspective:1500px;perspective-origin:50% 55%}
+#interior{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 72%,#fffaf0 0%,#fbe6b4 30%,#eebc68 62%,#c98a3a 100%)}
+#rays{position:absolute;inset:-200px;background:repeating-conic-gradient(from -90deg at 50% 78%,rgba(255,250,232,.55) 0deg 3deg,rgba(255,250,232,0) 3deg 9deg);-webkit-mask-image:radial-gradient(circle at 50% 78%,#000 0,#000 30%,transparent 70%);opacity:0}
+.leaf{position:absolute;top:0;width:240px;height:845px;backface-visibility:visible}
+.leaf .shade{position:absolute;inset:0;background:#1c0d04;opacity:0}
+#leafL{left:0;transform-origin:0 50%}
+#leafR{left:240px;transform-origin:100% 50%}
+#flash{background:#fff6e2;opacity:0}
+.row{display:flex;align-items:center;gap:36px;width:100%;text-align:left}
+.row .icon{flex:0 0 240px;height:270px;display:flex;align-items:center;justify-content:center}
+.row .txt{flex:1}
+.row .t1{font-size:84px;color:var(--maroon)}
+.row .t2{font-size:50px;font-weight:600;color:var(--ink);margin-top:6px}
+.row .t3{font-size:34px;font-style:italic;color:var(--green);margin-top:4px}
+.sep{width:100%;height:2px;background:linear-gradient(90deg,transparent,rgba(168,125,44,.55),transparent)}
+#qrcard{background:#fffaf0;border:2px solid rgba(168,125,44,.6);border-radius:18px;padding:26px 26px 18px;box-shadow:0 10px 30px rgba(90,60,20,.12)}
+</style>
+<script src="node_modules/gsap/dist/gsap.min.js"></script>
+</head>
+<body>
+<div id="stage">
+  <svg class="layer" id="mandala" style="opacity:0" width="1080" height="1920"></svg>
+  <svg class="layer" id="petals" width="1080" height="1920"></svg>
+
+  <!-- SCENE 1: the door -->
+  <div class="scene" id="s1">
+    <div id="s1zoom" class="layer">
+      <svg class="layer" id="doorBack" width="1080" height="1920"></svg>
+      <div id="doorway">
+        <div id="interior"></div>
+        <div id="rays"></div>
+        <svg id="lamp" style="position:absolute;left:170px;top:560px" width="140" height="285" viewBox="-70 -285 140 285"></svg>
+        <div class="leaf" id="leafL"><svg width="240" height="845" id="leafLsvg"></svg><div class="shade"></div></div>
+        <div class="leaf" id="leafR"><svg width="240" height="845" id="leafRsvg"></svg><div class="shade"></div></div>
+      </div>
+      <svg class="layer" id="doorFront" width="1080" height="1920"></svg>
+      <div class="col" style="top:222px">
+        <div class="script maroon s1t" style="font-size:138px">Gruhapravesham</div>
+        <div class="caps green s1t" style="font-size:34px;margin-top:2px">Sunday · 22 November 2026</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCENE 2: blessings -->
+  <div class="scene" id="s2">
+    <div class="col vc">
+      <div class="it maroon s2a" style="font-size:36px;letter-spacing:.01em">|| Sri Lakshmivenkateshwara Swamy Prasanna ||</div>
+      <div style="position:relative;width:880px;margin-top:40px">
+        <div id="halo" style="position:absolute;left:50%;top:50%;width:900px;height:900px;margin:-450px 0 0 -450px;border-radius:50%;background:radial-gradient(circle,rgba(246,206,120,.55) 0%,rgba(246,206,120,.18) 40%,rgba(246,206,120,0) 68%);opacity:0"></div>
+        <div class="art wipe-up" id="deities" style="position:relative;color:#8a5d1a">{{svg:deities}}</div>
+      </div>
+      <div class="art divider s2a" style="margin-top:34px">{{svg:divider}}</div>
+      <div class="script green s2a" style="font-size:96px;margin-top:22px">With the blessings of</div>
+      <div class="name s2a" style="margin-top:20px">Late Smt. G. Jayalakshmi Naidu</div>
+      <div class="script maroon s2a" style="font-size:64px;line-height:.9">&amp;</div>
+      <div class="name s2a">Late Sri A. Seethapathy Naidu</div>
+      <svg id="s2diyas" class="s2a" width="760" height="200" viewBox="0 0 760 200" style="margin-top:36px"></svg>
+    </div>
+  </div>
+
+  <!-- SCENE 3: hosts + Yash Mahal -->
+  <div class="scene" id="s3">
+    <div class="col vc">
+      <div class="name s3a">Smt. Tejashwini A.</div>
+      <div class="script maroon s3a" style="font-size:66px;line-height:.95">&amp;</div>
+      <div class="name s3a">Sri Purushotham S. Raju</div>
+      <div class="body it s3a" style="margin-top:34px;max-width:820px">solicit your gracious presence on the auspicious occasion of the</div>
+      <div class="script green s3a" style="font-size:150px;margin-top:6px">Gruhapravesham</div>
+      <div class="body it s3a" style="margin-top:-4px">of our newly constructed home</div>
+      <div class="art wipe-right" id="logo" style="width:800px;margin-top:62px;color:var(--maroon)">{{svg:logo}}</div>
+      <div style="position:relative;width:860px;height:230px;margin-top:40px">
+        <div class="art" id="eleL" style="position:absolute;left:40px;bottom:0;width:250px;color:var(--green)">{{svg:elephant}}</div>
+        <div class="art" id="eleR" style="position:absolute;right:40px;bottom:0;width:250px;color:var(--green)"><div style="transform:scaleX(-1)">{{svg:elephant}}</div></div>
+        <div class="art" id="kalasha3" style="position:absolute;left:50%;bottom:0;width:150px;margin-left:-75px;color:var(--maroon)">{{svg:kalasha}}</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCENE 4: schedule -->
+  <div class="scene" id="s4">
+    <div class="col vc">
+      <div class="script maroon s4a" style="font-size:120px">Sunday</div>
+      <div class="s4a" style="font-size:66px;font-weight:600;color:var(--green);margin-top:-6px">22 November 2026</div>
+      <div class="art divider s4a" style="margin-top:26px">{{svg:divider}}</div>
+      <div style="width:100%;margin-top:30px">
+        <div class="row s4r">
+          <div class="icon"><div class="art" style="width:236px;color:var(--maroon)">{{svg:couple}}</div></div>
+          <div class="txt"><div class="script t1">Gruhapravesha</div><div class="t2">5:15 AM – 5:45 AM</div><div class="t3">Shubha Brahmi Muhurtha · Tula Lagna</div></div>
+        </div>
+        <div class="sep s4r" style="margin:34px 0"></div>
+        <div class="row s4r">
+          <div class="icon"><div class="art" style="width:172px;color:var(--maroon)">{{svg:kalasha}}</div></div>
+          <div class="txt"><div class="script t1" style="font-size:76px;line-height:1">Sri Sathyanarayan<br>Swamy Pooja</div><div class="t2">7:30 AM onwards</div></div>
+        </div>
+        <div class="sep s4r" style="margin:34px 0"></div>
+        <div class="row s4r">
+          <div class="icon"><div class="art" style="width:220px;color:var(--maroon)">{{svg:cloche}}</div></div>
+          <div class="txt"><div class="script t1">Lunch</div><div class="t2">12:00 PM onwards</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCENE 5: venue -->
+  <div class="scene" id="s5">
+    <div class="col vc">
+      <div class="script maroon s5a" style="font-size:124px">Venue</div>
+      <div class="art s5a" style="width:470px;margin-top:6px;color:var(--green)">{{svg:logo}}</div>
+      <div class="body s5a" style="margin-top:30px;font-size:45px;line-height:1.5">No. 151, 1st Cross, Hollywood Town,</div>
+      <div class="body s5a" style="font-size:45px;line-height:1.5">Opp. to Aham Aathma School,</div>
+      <div class="body s5a" style="font-size:45px;line-height:1.5">Nelagadaranahalli,</div>
+      <div class="body s5a" style="font-size:45px;line-height:1.5">Bangalore – 560073</div>
+      <div id="qrcard" class="s5a" style="margin-top:50px">
+        <div class="art" style="width:310px;color:#2a1a14">{{svg:qr}}</div>
+        <div class="it" style="font-size:30px;color:var(--maroon);margin-top:14px">Scan for venue location</div>
+      </div>
+      <div class="caps green s5a" style="font-size:30px;margin-top:54px">Contact</div>
+      <div class="s5a" style="font-size:42px;font-weight:600;margin-top:10px;color:var(--ink)">97315 50880 · 96206 50880</div>
+      <div class="s5a" style="font-size:42px;font-weight:600;margin-top:4px;color:var(--ink)">97317 20880</div>
+    </div>
+  </div>
+
+  <!-- SCENE 6: closing -->
+  <div class="scene" id="s6">
+    <div class="col vc">
+      <div class="script maroon s6a" style="font-size:104px">Cordially invite you</div>
+      <div class="script maroon s6a" style="font-size:104px">&amp; your family</div>
+      <div class="art divider s6a" style="margin-top:30px">{{svg:divider}}</div>
+      <div class="caps green s6a" style="font-size:30px;margin-top:30px">With best compliments from</div>
+      <div class="name s6a" style="font-size:52px;margin-top:18px">Smt. Tejashwini A. &amp;</div><div class="name s6a" style="font-size:52px">Sri Purushotham S. Raju</div>
+      <div class="name s6a" style="font-size:52px;margin-top:10px">Prince Yashmith P.</div>
+      <div class="body it s6a" style="margin-top:6px;font-size:44px">Relatives &amp; Friends</div>
+      <div class="art wipe-up" id="couple6" style="width:440px;margin-top:56px;color:var(--maroon)">{{svg:couple}}</div>
+    </div>
+    <div class="art" id="cowL" style="position:absolute;left:70px;top:1590px;width:230px;color:var(--green);opacity:0">{{svg:cow}}</div>
+    <div class="art" id="cowR" style="position:absolute;right:70px;top:1590px;width:230px;color:var(--green);opacity:0"><div style="transform:scaleX(-1)">{{svg:cow}}</div></div>
+  </div>
+
+  <svg class="layer" id="border" width="1080" height="1920"></svg>
+  <svg class="layer" id="toran" width="1080" height="260"></svg>
+  <div class="layer" id="flash"></div>
+</div>
+
+<script>
+const NS='http://www.w3.org/2000/svg';
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+function rnd(seed){let s=seed>>>0;return()=>{s=(s*1664525+1013904223)>>>0;return s/4294967296}}
+
+/* ---------- shared defs ---------- */
+const DEFS=`
+<linearGradient id="brass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6d47a"/><stop offset=".45" stop-color="#d9a63f"/><stop offset="1" stop-color="#8f611c"/></linearGradient>
+<radialGradient id="stud" cx=".38" cy=".35" r=".7"><stop offset="0" stop-color="#fff2c4"/><stop offset=".35" stop-color="#e6b54f"/><stop offset="1" stop-color="#7d5216"/></radialGradient>
+<radialGradient id="mari" cx=".4" cy=".35" r=".75"><stop offset="0" stop-color="#ffd65c"/><stop offset=".55" stop-color="#f59a1b"/><stop offset="1" stop-color="#d4600c"/></radialGradient>
+<radialGradient id="mariY" cx=".4" cy=".35" r=".75"><stop offset="0" stop-color="#fff1a0"/><stop offset=".55" stop-color="#f7c623"/><stop offset="1" stop-color="#d99a0c"/></radialGradient>
+<linearGradient id="mango" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a6229"/><stop offset="1" stop-color="#4c963a"/></linearGradient>
+<radialGradient id="flame" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#ffffff"/><stop offset=".25" stop-color="#fff2b0"/><stop offset=".6" stop-color="#ffb52a"/><stop offset="1" stop-color="#e8580c"/></radialGradient>
+<radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd877" stop-opacity=".75"/><stop offset=".45" stop-color="#ffc85a" stop-opacity=".25"/><stop offset="1" stop-color="#ffc85a" stop-opacity="0"/></radialGradient>
+<linearGradient id="banLeaf" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2b6a2c"/><stop offset=".55" stop-color="#4b9a3c"/><stop offset="1" stop-color="#76b94c"/></linearGradient>
+<linearGradient id="banLeaf2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#245a26"/><stop offset=".6" stop-color="#3e8634"/><stop offset="1" stop-color="#5fa443"/></linearGradient>
+<linearGradient id="trunk" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7f9e3e"/><stop offset=".45" stop-color="#b9cf6a"/><stop offset="1" stop-color="#6c8c33"/></linearGradient>
+<linearGradient id="woodFrame" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4a2814"/><stop offset=".5" stop-color="#5e3419"/><stop offset="1" stop-color="#43230f"/></linearGradient>
+<linearGradient id="lintel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6a3a1c"/><stop offset="1" stop-color="#3f210e"/></linearGradient>
+<linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e3cfac"/><stop offset="1" stop-color="#d6bd92"/></linearGradient>
+<linearGradient id="spill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe1a3" stop-opacity=".85"/><stop offset="1" stop-color="#ffe1a3" stop-opacity="0"/></linearGradient>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="16"/></filter>
+`;
+
+/* ---------- pieces ---------- */
+function marigold(x,y,r,yellow){
+  return `<g><circle cx="${x}" cy="${y}" r="${r}" fill="url(#${yellow?'mariY':'mari'})"/><circle cx="${x}" cy="${y}" r="${r*.72}" fill="none" stroke="${yellow?'#c98a08':'#b94b06'}" stroke-width="1.6" stroke-dasharray="2 3" opacity=".7"/></g>`;
+}
+function mangoLeaf(L){
+  const w=L*.2;
+  return `<path d="M0,0 C${w},${L*.13} ${w*1.15},${L*.55} 0,${L} C${-w*1.15},${L*.55} ${-w},${L*.13} 0,0Z" fill="url(#mango)"/><path d="M0,${L*.05} L0,${L*.92}" stroke="#a9c870" stroke-width="1.6" opacity=".8"/>`;
+}
+function diya(cx,cy,s,id){
+  return `<g transform="translate(${cx},${cy}) scale(${s})">
+    <circle class="dglow" cx="0" cy="-40" r="95" fill="url(#glow)"/>
+    <ellipse cx="0" cy="22" rx="40" ry="9" fill="#6b4413" opacity=".55"/>
+    <path d="M-16,20 L-10,4 L10,4 L16,20Z" fill="url(#brass)"/>
+    <path d="M-46,-6 Q0,40 46,-6 Z" fill="url(#brass)"/>
+    <ellipse cx="0" cy="-6" rx="46" ry="9" fill="#f3cf72"/><ellipse cx="0" cy="-6" rx="38" ry="6" fill="#7a4d12"/>
+    <path d="M30,-8 Q52,-14 56,-24 Q46,-10 30,-4Z" fill="#e2b04a"/>
+    <line x1="34" y1="-10" x2="44" y2="-20" stroke="#3a2210" stroke-width="3"/>
+    <g transform="translate(44,-20)"><g class="flame" data-id="${id}"><path d="M0,-52 C14,-30 14,-10 0,0 C-14,-10 -14,-30 0,-52Z" fill="url(#flame)"/></g></g>
+  </g>`;
+}
+function banana(x,y,flip){
+  const leaves=[[-163,300,.36],[-132,390,.34],[-102,430,.32],[-72,390,.34],[-40,290,.36]];
+  let s=`<g transform="translate(${x},${y}) scale(${flip?-1:1},1)">`;
+  s+=`<path d="M-27,0 C-25,-200 -21,-380 -16,-515 L16,-515 C21,-380 25,-200 27,0Z" fill="url(#trunk)"/>`;
+  for(let i=0;i<6;i++){const xx=-18+i*7;s+=`<path d="M${xx},0 C${xx+1},-170 ${xx*0.6},-360 ${xx*0.55},-510" stroke="#6e8c34" stroke-width="1.4" fill="none" opacity=".5"/>`}
+  leaves.forEach(([a,L,wr],k)=>{
+    const W=L*wr, r=a*Math.PI/180, dx=Math.cos(r), dy=Math.sin(r);
+    const droop=L*.42*Math.abs(dx)+L*.08;
+    const P0=[0,0],P1=[dx*L*.55,dy*L*.55-L*.05],P2=[dx*L,dy*L+droop];
+    const N=28, mid=[], up=[], lo=[];
+    for(let i=0;i<=N;i++){const u=i/N;
+      const px=(1-u)*(1-u)*P0[0]+2*u*(1-u)*P1[0]+u*u*P2[0], py=(1-u)*(1-u)*P0[1]+2*u*(1-u)*P1[1]+u*u*P2[1];
+      const tx=2*(1-u)*(P1[0]-P0[0])+2*u*(P2[0]-P1[0]), ty=2*(1-u)*(P1[1]-P0[1])+2*u*(P2[1]-P1[1]);
+      const tl=Math.hypot(tx,ty)||1, nx=-ty/tl, ny=tx/tl;
+      const w=W*Math.pow(Math.sin(Math.PI*Math.min(1,u*1.08)),.62)*(1-.25*u)*.5+ (u<.06?0:0);
+      mid.push([px,py]); up.push([px+nx*w*1.05,py+ny*w*1.05]); lo.push([px-nx*w*.95,py-ny*w*.95]);}
+    const f=v=>v.toFixed(1);
+    let d='M0,0 '+up.map(p=>`L${f(p[0])},${f(p[1])}`).join(' ')+' '+lo.slice().reverse().map(p=>`L${f(p[0])},${f(p[1])}`).join(' ')+'Z';
+    let veins='';for(let j=3;j<N-1;j+=2){const m=mid[j],e1=up[Math.min(N,j+2)],e2=lo[Math.min(N,j+2)];veins+=`M${f(m[0])},${f(m[1])} L${f(e1[0])},${f(e1[1])} M${f(m[0])},${f(m[1])} L${f(e2[0])},${f(e2[1])} `}
+    const rib='M0,0 '+mid.map(p=>`L${f(p[0])},${f(p[1])}`).join(' ');
+    s+=`<g transform="translate(0,-505)"><g class="bleaf" data-k="${k}"><path d="${d}" fill="url(#${k%2?'banLeaf2':'banLeaf'})"/><path d="${veins}" stroke="#dff2a8" stroke-width="1.3" opacity=".25" fill="none"/><path d="${rib}" stroke="#d6e58c" stroke-width="3.4" fill="none"/></g></g>`;
+  });
+  return s+'</g>';
+}
+function kolam(cx,cy){
+  let s=`<g transform="translate(${cx},${cy}) scale(1,.34)"><g id="kolamInner">`;
+  for(let i=0;i<48;i++){const a=i/48*Math.PI*2;s+=`<circle cx="${Math.cos(a)*262}" cy="${Math.sin(a)*262}" r="6" fill="#fffaf0"/>`}
+  for(let i=0;i<16;i++){const a=i*22.5;s+=`<ellipse transform="rotate(${a}) translate(205,0)" rx="44" ry="20" fill="#7a1d2b" stroke="#fffaf0" stroke-width="5"/>`}
+  for(let i=0;i<16;i++){const a=i*22.5+11.25;s+=`<ellipse transform="rotate(${a}) translate(175,0)" rx="14" ry="9" fill="#2f5a3a" stroke="#fffaf0" stroke-width="3"/>`}
+  for(let i=0;i<8;i++){const a=i*45;s+=`<ellipse transform="rotate(${a}) translate(115,0)" rx="68" ry="30" fill="#e8781a" stroke="#fffaf0" stroke-width="5"/>`}
+  for(let i=0;i<8;i++){const a=i*45+22.5;s+=`<ellipse transform="rotate(${a}) translate(58,0)" rx="40" ry="18" fill="#f2c230" stroke="#fffaf0" stroke-width="4"/>`}
+  s+=`<circle r="32" fill="#2f5a3a" stroke="#fffaf0" stroke-width="5"/><circle r="9" fill="#fffaf0"/>`;
+  return s+'</g></g>';
+}
+
+/* ---------- door back (floor, wall shadow) ---------- */
+(function(){
+  let s=`<defs>${DEFS}</defs>`;
+  s+=`<rect x="0" y="1545" width="1080" height="375" fill="url(#floor)"/>`;
+  s+=`<clipPath id="flc"><rect x="0" y="1545" width="1080" height="375"/></clipPath><g stroke="#bf9f6c" stroke-width="1.4" opacity=".5" clip-path="url(#flc)">`;
+  for(let i=-10;i<=10;i++){s+=`<line x1="540" y1="1100" x2="${540+i*170}" y2="2200"/>`}
+  [1600,1668,1752,1858].forEach(y=>s+=`<line x1="0" y1="${y}" x2="1080" y2="${y}"/>`);
+  s+=`</g><rect x="0" y="1545" width="1080" height="70" fill="#e3cfac" opacity=".55"/>`;
+  s+=`<rect x="232" y="545" width="616" height="1010" fill="#3b2412" opacity=".28" filter="url(#soft)"/>`;
+  s+=`<polygon id="spill" points="300,1575 780,1575 960,1920 120,1920" fill="url(#spill)" opacity="0"/>`;
+  $('#doorBack').innerHTML=s;
+})();
+
+/* ---------- door leaves ---------- */
+function leafSVG(side){
+  const id='w'+side;
+  let s=`<defs>${DEFS}<linearGradient id="${id}" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6c3d1f"/><stop offset=".3" stop-color="#85522c"/><stop offset=".62" stop-color="#6a3b1d"/><stop offset="1" stop-color="#7b4726"/></linearGradient></defs>`;
+  s+=`<rect width="240" height="845" fill="url(#${id})"/>`;
+  const r=rnd(side==='L'?11:23);
+  for(let i=0;i<9;i++){const x=12+i*26+r()*8;s+=`<path d="M${x},0 C${x+r()*10-5},200 ${x+r()*12-6},500 ${x+r()*8-4},845" stroke="#4a260f" stroke-width="${1+r()}" fill="none" opacity=".22"/>`}
+  s+=`<rect x="2" y="2" width="236" height="841" fill="none" stroke="#3a1d0b" stroke-width="5"/>`;
+  [[44,226],[312,248],[602,200]].forEach(([y,h])=>{
+    s+=`<rect x="30" y="${y}" width="180" height="${h}" fill="#000" opacity=".1"/>`;
+    s+=`<rect x="30" y="${y}" width="180" height="${h}" fill="none" stroke="#40210c" stroke-width="3"/>`;
+    s+=`<path d="M40,${y+h-10} L40,${y+10} L200,${y+10}" stroke="#a46d3d" stroke-width="2" fill="none" opacity=".75"/>`;
+    s+=`<path d="M40,${y+h-10} L200,${y+h-10} L200,${y+10}" stroke="#2c1406" stroke-width="2" fill="none" opacity=".6"/>`;
+    s+=`<circle cx="120" cy="${y+h/2}" r="13" fill="url(#stud)"/><circle cx="120" cy="${y+h/2}" r="21" fill="none" stroke="#c99a40" stroke-width="2" opacity=".8"/>`;
+  });
+  [22,288,578,822].forEach(y=>{for(let x=24;x<=216;x+=32){s+=`<circle cx="${x}" cy="${y}" r="7" fill="url(#stud)"/>`}});
+  const kx=side==='L'?204:36;
+  s+=`<circle cx="${kx}" cy="470" r="10" fill="url(#stud)"/><circle cx="${kx}" cy="494" r="22" fill="none" stroke="url(#brass)" stroke-width="6"/>`;
+  return s;
+}
+$('#leafLsvg').innerHTML=leafSVG('L');
+$('#leafRsvg').innerHTML=leafSVG('R');
+
+/* ---------- lamp inside ---------- */
+$('#lamp').innerHTML=`<defs>${DEFS}</defs>
+  <circle cx="0" cy="-232" r="120" fill="url(#glow)" class="lglow"/>
+  <ellipse cx="0" cy="-8" rx="62" ry="10" fill="#8a5a1c" opacity=".5"/>
+  <path d="M-52,-6 Q0,-34 52,-6 L44,0 L-44,0Z" fill="url(#brass)"/>
+  <rect x="-7" y="-200" width="14" height="190" fill="url(#brass)"/>
+  <circle cx="0" cy="-120" r="11" fill="url(#brass)"/><circle cx="0" cy="-60" r="9" fill="url(#brass)"/>
+  <path d="M-46,-206 Q0,-180 46,-206 Z" fill="url(#brass)"/><ellipse cx="0" cy="-206" rx="46" ry="7" fill="#f2cf74"/>
+  <path d="M0,-212 L-6,-232 L0,-246 L6,-232Z" fill="#c99a40"/>
+  ${[-40,0,40].map((x,i)=>`<g transform="translate(${x},-208)"><g class="flame" data-id="l${i}"><path d="M0,-34 C9,-20 9,-6 0,0 C-9,-6 -9,-20 0,-34Z" fill="url(#flame)"/></g></g>`).join('')}`;
+
+/* ---------- door front (frame, lintel, garlands, plants, diyas, kolam) ---------- */
+(function(){
+  let s=`<defs>${DEFS}</defs>`;
+  // frame with opening
+  s+=`<path d="M250,650 H830 V1545 H250Z M300,700 V1545 H780 V700Z" fill="url(#woodFrame)" fill-rule="evenodd"/>`;
+  s+=`<path d="M262,662 H818 V1545 M262,1545 V662" stroke="#c9a24a" stroke-width="1.6" fill="none" opacity=".7"/>`;
+  s+=`<path d="M290,1545 V690 H790 V1545" stroke="#c9a24a" stroke-width="1.6" fill="none" opacity=".7"/>`;
+  for(let y=720;y<1530;y+=32){s+=`<circle cx="276" cy="${y}" r="3.4" fill="#d6ad52" opacity=".85"/><circle cx="804" cy="${y}" r="3.4" fill="#d6ad52" opacity=".85"/>`}
+  // threshold (hosilu) with haldi-kumkum
+  s+=`<rect x="226" y="1540" width="628" height="40" fill="#5f4a3c"/><rect x="226" y="1540" width="628" height="6" fill="#86705f"/>`;
+  for(let x=256;x<=800;x+=58){s+=`<rect x="${x-10}" y="1550" width="20" height="24" fill="#e9b419"/><circle cx="${x+29}" cy="1562" r="7" fill="#c1121f"/>`}
+  // lintel + cornice
+  s+=`<rect x="200" y="538" width="680" height="24" fill="#3a1e0c"/>`;
+  for(let x=206;x<874;x+=20){s+=`<rect x="${x}" y="562" width="11" height="10" fill="#4f2b13"/>`}
+  s+=`<rect x="215" y="572" width="650" height="80" fill="url(#lintel)"/>`;
+  s+=`<rect x="226" y="582" width="628" height="60" fill="none" stroke="#c9a24a" stroke-width="1.6" opacity=".75"/>`;
+  for(let x=246;x<840;x+=26){if(Math.abs(x-540)>80)s+=`<path d="M${x},612 l6,-8 l6,8 l-6,8z" fill="#c9a24a" opacity=".55"/>`}
+  // medallion with Ganesha
+  s+=`<circle cx="540" cy="586" r="70" fill="#3d200d" stroke="url(#brass)" stroke-width="6"/><circle cx="540" cy="586" r="60" fill="none" stroke="#c9a24a" stroke-width="1.5"/>`;
+  s+=`<g color="#e8c060"><svg x="497" y="532" width="86" height="106" viewBox="0 0 625 775">{{svgpath:ganesha}}</svg></g>`;
+  // mango leaf toran on lintel
+  for(let i=0;i<12;i++){const x=318+i*40;s+=`<g class="tl" data-i="${i}" transform="translate(${x},650)"><g>${mangoLeaf(i%2?66:76)}</g></g>`}
+  // marigold swag
+  for(let i=0;i<=26;i++){const u=i/26, x=(1-u)*(1-u)*298+2*u*(1-u)*540+u*u*782, y=(1-u)*(1-u)*660+2*u*(1-u)*792+u*u*660;s+=marigold(x,y,12,i%2)}
+  // side strings
+  [[262,'L'],[818,'R']].forEach(([x])=>{for(let j=0;j<10;j++)s+=marigold(x,672+j*23,11.5,j%2===0);s+=`<path d="M${x},902 l-8,26 l16,0z" fill="#c1121f"/>`});
+  // corner rosettes
+  s+=marigold(250,650,15,1)+marigold(830,650,15,1);
+  // banana plants
+  s+=banana(130,1560,false)+banana(950,1560,true);
+  // diyas
+  s+=diya(196,1660,1.05,'d1')+diya(884,1660,1.05,'d2');
+  // kolam
+  s+=kolam(540,1750);
+  $('#doorFront').innerHTML=s;
+})();
+
+/* ---------- scene 2 diyas ---------- */
+$('#s2diyas').innerHTML=`<defs>${DEFS}</defs>`+diya(150,130,.95,'e1')+diya(610,130,.95,'e2')+(()=>{let g='';for(let i=0;i<=14;i++){const u=i/14,x=(1-u)*(1-u)*230+2*u*(1-u)*380+u*u*530,y=(1-u)*(1-u)*60+2*u*(1-u)*170+u*u*60;g+=marigold(x,y,12,i%2)}return g})();
+
+/* ---------- mandala ---------- */
+(function(){
+  let s=`<g id="mand" transform="translate(540,1000)" stroke="#a87d2c" fill="none" stroke-width="2">`;
+  [[440,48,46,16],[350,36,40,14],[260,24,36,13],[175,16,30,11]].forEach(([r,n,rx,ry])=>{
+    s+=`<circle r="${r+rx+10}" stroke-width="1.4"/>`;
+    for(let i=0;i<n;i++){s+=`<ellipse transform="rotate(${i*360/n}) translate(${r},0)" rx="${rx}" ry="${ry}"/>`}
+  });
+  for(let i=0;i<72;i++){const a=i*5*Math.PI/180;s+=`<circle cx="${Math.cos(a)*520}" cy="${Math.sin(a)*520}" r="3" fill="#a87d2c" stroke="none"/>`}
+  s+=`<circle r="110"/><circle r="70"/></g>`;
+  $('#mandala').innerHTML=s;
+})();
+
+/* ---------- border ---------- */
+$('#border').innerHTML=`<defs><pattern id="qf" width="22" height="22" patternUnits="userSpaceOnUse">
+  <circle cx="11" cy="6" r="3.1" fill="#2f5a3a" opacity=".5"/><circle cx="11" cy="16" r="3.1" fill="#2f5a3a" opacity=".5"/><circle cx="6" cy="11" r="3.1" fill="#2f5a3a" opacity=".5"/><circle cx="16" cy="11" r="3.1" fill="#2f5a3a" opacity=".5"/><circle cx="11" cy="11" r="1.7" fill="#a87d2c"/></pattern></defs>
+  <path d="M20,20 H1060 V1900 H20Z M44,44 V1876 H1036 V44Z" fill="#efe4cc" fill-rule="evenodd"/>
+  <path d="M20,20 H1060 V1900 H20Z M44,44 V1876 H1036 V44Z" fill="url(#qf)" fill-rule="evenodd"/>
+  <rect x="20" y="20" width="1040" height="1880" fill="none" stroke="#a87d2c" stroke-width="3"/>
+  <rect x="44" y="44" width="992" height="1832" fill="none" stroke="#a87d2c" stroke-width="2"/>
+  <rect x="54" y="54" width="972" height="1812" fill="none" stroke="#a87d2c" stroke-width="1" opacity=".6"/>
+  ${[[32,32],[1048,32],[32,1888],[1048,1888]].map(([x,y])=>`<path d="M${x},${y-14} L${x+14},${y} L${x},${y+14} L${x-14},${y}Z" fill="#a87d2c"/><circle cx="${x}" cy="${y}" r="4" fill="#f7f0e2"/>`).join('')}`;
+
+/* ---------- top toran ---------- */
+(function(){
+  let s=`<defs>${DEFS}</defs><path d="M44,62 Q540,96 1036,62" stroke="#8a5d1a" stroke-width="5" fill="none"/><path d="M44,62 Q540,96 1036,62" stroke="#e6c26a" stroke-width="2" stroke-dasharray="6 6" fill="none"/>`;
+  const N=25;
+  for(let i=0;i<N;i++){
+    const x=68+i*(944/(N-1)), u=(x-540)/496, y=62+17*(1-u*u);
+    let inner = i%2===0 ? mangoLeaf(i%4===0?104:92) : (marigold(0,14,12,i%4===1)+marigold(0,38,13.5,i%4===3)+`<path d="M0,52 l-6,16 l12,0z" fill="#c1121f"/>`);
+    s+=`<g transform="translate(${x.toFixed(1)},${y.toFixed(1)})"><g class="tt" data-i="${i}">${inner}</g></g>`;
+  }
+  $('#toran').innerHTML=s;
+})();
+
+/* ---------- petals ---------- */
+const PET=[];(function(){
+  const r=rnd(99);let s='';
+  const cols=['#f59a1b','#f7c623','#e8700f','#c1121f','#f5b041'];
+  for(let i=0;i<14;i++){
+    const p={x:80+r()*920,off:r()*2200,sp:60+r()*70,amp:20+r()*45,fr:.4+r()*.7,ph:r()*6.28,rot:r()*360,vr:(r()-.5)*120,sc:.8+r()*.7};
+    PET.push(p);
+    s+=`<g class="pt"><ellipse rx="7" ry="12" fill="${cols[i%cols.length]}" opacity=".85"/><ellipse rx="3" ry="8" fill="#fff" opacity=".18"/></g>`;
+  }
+  for(let i=0;i<26;i++){PET.push({spark:1,x:90+r()*900,y:260+r()*1550,ph:r()*6.28,fr:.6+r()*1.2});s+=`<circle class="sk" r="${2+r()*2.5}" fill="#e7bf55"/>`}
+  $('#petals').innerHTML=s;
+})();
+const ptEls=$$('#petals .pt'), skEls=$$('#petals .sk');
+
+/* ---------- per-frame procedural ---------- */
+const flames=$$('.flame'), tts=$$('#toran .tt'), tls=$$('#doorFront .tl'), bls=$$('.bleaf');
+function procedural(t){
+  flames.forEach((f,i)=>{const sy=1+Math.sin(t*11+i*1.7)*.07+Math.sin(t*23+i)*.04, sx=1-Math.sin(t*9+i*2.1)*.05, k=Math.sin(t*6.5+i*1.3)*5;f.setAttribute('transform',`scale(${sx.toFixed(3)},${sy.toFixed(3)}) skewX(${k.toFixed(2)})`)});
+  tts.forEach((g,i)=>g.setAttribute('transform',`rotate(${(Math.sin(t*1.5+i*.55)*4.5).toFixed(2)})`));
+  tls.forEach((g,i)=>g.firstChild.setAttribute('transform',`rotate(${(Math.sin(t*1.7+i*.6)*5).toFixed(2)})`));
+  bls.forEach(g=>{const k=+g.dataset.k;g.setAttribute('transform',`rotate(${(Math.sin(t*1.1+k*.9)*2.2).toFixed(2)})`)});
+  const pv=Math.min(1,Math.max(0,(t-3.2)/1.2));
+  ptEls.forEach((el,i)=>{const p=PET[i];const y=((t*p.sp+p.off)%2200)-120;const x=p.x+Math.sin(t*p.fr+p.ph)*p.amp;el.setAttribute('transform',`translate(${x.toFixed(1)},${y.toFixed(1)}) rotate(${(p.rot+t*p.vr).toFixed(1)}) scale(${p.sc.toFixed(2)})`);el.setAttribute('opacity',pv.toFixed(2))});
+  skEls.forEach((el,i)=>{const p=PET[14+i];const o=Math.max(0,Math.sin(t*p.fr*2+p.ph))**3*pv*.9;el.setAttribute('cx',p.x);el.setAttribute('cy',p.y);el.setAttribute('opacity',o.toFixed(2))});
+  $('#mand').setAttribute('transform',`translate(540,1000) rotate(${(t*2.2).toFixed(2)})`);
+  $('#halo').style.transform=`scale(${(1+Math.sin(t*1.4)*.04).toFixed(3)})`;
+}
+
+/* ---------- timeline ---------- */
+const tl=gsap.timeline({paused:true});
+const IN={opacity:0,y:34,filter:'blur(10px)'}, TO={opacity:1,y:0,filter:'blur(0px)',duration:.9,ease:'power2.out'};
+function stagger(sel,at,gap){$$(sel).forEach((el,i)=>tl.fromTo(el,IN,{...TO},at+i*gap))}
+function sceneIn(id,at){tl.set(id,{opacity:1},at)}
+function sceneOut(id,at){tl.to(id,{opacity:0,y:-24,filter:'blur(8px)',duration:.6,ease:'power2.in'},at)}
+
+// S1
+tl.set('#s1',{opacity:1},0);
+tl.fromTo('#s1zoom',{opacity:0},{opacity:1,duration:.9,ease:'power1.out'},0);
+stagger('.s1t',.35,.45);
+tl.fromTo('#kolamInner',{opacity:0,scale:.55,transformOrigin:'50% 50%'},{opacity:1,scale:1,duration:1.4,ease:'back.out(1.4)'},.6);
+tl.to('#leafL',{rotationY:82,duration:2.3,ease:'power2.inOut'},2.3);
+tl.to('#leafR',{rotationY:-82,duration:2.3,ease:'power2.inOut'},2.3);
+tl.to('.leaf .shade',{opacity:.5,duration:2.3,ease:'power1.in'},2.3);
+tl.to('#rays',{opacity:1,duration:1.8},2.8);
+tl.to('#spill',{opacity:1,duration:1.8},2.8);
+tl.to('.s1t',{opacity:0,y:-20,duration:.6},4.3);
+tl.to('#s1zoom',{scale:5.2,transformOrigin:'540px 1300px',duration:2.0,ease:'power3.in'},4.3);
+tl.to('#flash',{opacity:1,duration:.75,ease:'power1.in'},5.6);
+tl.set('#s1',{opacity:0},6.35);
+// S2
+sceneIn('#s2',6.35);
+tl.set('#mandala',{opacity:.075},6.35);
+tl.to('#flash',{opacity:0,duration:.9,ease:'power1.out'},6.4);
+tl.fromTo('#halo',{opacity:0},{opacity:1,duration:1.5},6.9);
+tl.fromTo('#deities',{'--p':'-12%'},{'--p':'112%',duration:2.0,ease:'power1.inOut'},6.9);
+{const a=$$('.s2a');tl.fromTo(a[0],IN,{...TO},6.6);tl.fromTo(a[1],{opacity:0,scaleX:0},{opacity:1,scaleX:1,duration:.9,ease:'power2.out'},8.5);a.slice(2).forEach((el,i)=>tl.fromTo(el,IN,{...TO},8.9+i*.4))}
+sceneOut('#s2',12.7);
+// S3
+sceneIn('#s3',13.3);
+stagger('#s3 .s3a',13.4,.38);
+tl.fromTo('#logo',{'--p':'-10%'},{'--p':'110%',duration:1.6,ease:'power1.inOut'},16.0);
+tl.fromTo('#eleL',{x:-340,opacity:0},{x:0,opacity:1,duration:2.2,ease:'power2.out'},17.0);
+tl.fromTo('#eleR',{x:340,opacity:0},{x:0,opacity:1,duration:2.2,ease:'power2.out'},17.0);
+tl.fromTo('#kalasha3',IN,{...TO},18.4);
+sceneOut('#s3',21.4);
+// S4
+sceneIn('#s4',22.0);
+{const a=$$('.s4a');tl.fromTo(a[0],IN,{...TO},22.1);tl.fromTo(a[1],IN,{...TO},22.45);tl.fromTo(a[2],{opacity:0,scaleX:0},{opacity:1,scaleX:1,duration:.9},22.8)}
+$$('.s4r').forEach((el,i)=>tl.fromTo(el,{opacity:0,x:i%2?0:70,filter:'blur(8px)'},{opacity:1,x:0,filter:'blur(0px)',duration:1,ease:'power2.out'},23.3+i*.7));
+sceneOut('#s4',30.2);
+// S5
+sceneIn('#s5',30.8);
+stagger('#s5 .s5a',30.9,.32);
+sceneOut('#s5',38.0);
+// S6
+sceneIn('#s6',38.6);
+stagger('#s6 .s6a',38.7,.35);
+tl.fromTo('#couple6',{'--p':'-12%'},{'--p':'112%',duration:1.8,ease:'power1.inOut'},40.6);
+tl.fromTo(['#cowL','#cowR'],{opacity:0,y:30},{opacity:1,y:0,duration:1.2,ease:'power2.out'},41.4);
+tl.set({},{},45.5);
+
+window.DURATION=45.5;
+window.renderAt=function(t){tl.seek(t,false);procedural(t)};
+window.ready=document.fonts.ready.then(()=>{renderAt(0);return true});
+</script>
+</body></html>

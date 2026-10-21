@@ -1,0 +1,509 @@
+<title>Yash Mahal Gruhapravesham</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Gruhapravesham of Yash Mahal, Sunday 22 November 2026, Nelagadaranahalli, Bangalore">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Great+Vibes&family=Lora:ital,wght@0,400;0,600;1,400;1,500&display=swap">
+<style>
+/* Layout: one hand-made invitation column on paper; the opening is a pinned 9:16 stage you scroll through (door opens, light, blessings) */
+:root{
+  --paper:#f6eedc;
+  --paper-deep:#ebdec2;
+  --ink:#3a2a22;
+  --ink-soft:#6b5546;
+  --maroon:#7a1d2b;
+  --green:#2f5a3a;
+  --gold:#a87d2c;
+  --gold-line:rgba(168,125,44,.55);
+  --on-maroon:#fbf3e2;
+  --f-script:'Great Vibes','Snell Roundhand','Apple Chancery',cursive;
+  --f-serif:'Lora',Georgia,'Times New Roman',serif;
+  --f-caps:'Cinzel','Trajan Pro',Georgia,serif;
+  --noise:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .42 0 0 0 0 .32 0 0 0 0 .18 0 0 0 .085 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  color-scheme:light;
+}
+html{background:var(--paper)}
+body{background:var(--paper) var(--noise);color:var(--ink);font-family:var(--f-serif);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.paper{background:var(--paper) var(--noise)}
+.sprite{position:absolute;width:0;height:0;overflow:hidden}
+.frame{position:fixed;z-index:40;pointer-events:none;
+  top:calc(env(safe-area-inset-top,0px) + 7px);bottom:calc(env(safe-area-inset-bottom,0px) + 7px);
+  left:calc(env(safe-area-inset-left,0px) + 7px);right:calc(env(safe-area-inset-right,0px) + 7px);
+  border:1.5px solid var(--gold-line)}
+.frame::after{content:"";position:absolute;inset:4px;border:1px solid var(--gold-line)}
+#petals{position:fixed;inset:0;z-index:0;pointer-events:none}
+
+/* ---------- hero stage ---------- */
+#hero{position:relative;z-index:1;height:100vh;height:100svh;overflow:hidden}
+#stage{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:0 0}
+#zoom,#bless{position:absolute;inset:0}
+#bless{visibility:hidden}
+.st-abs{position:absolute;left:0;top:0}
+#title{position:absolute;left:0;width:1080px;top:206px;text-align:center}
+#title h1{margin:0;font:400 128px/1.05 var(--f-script);color:var(--maroon)}
+#title p{margin:6px 0 0;font:600 34px/1.2 var(--f-caps);letter-spacing:.16em;text-transform:uppercase;color:var(--green)}
+#doorway{position:absolute;left:300px;top:700px;width:480px;height:845px;overflow:hidden;perspective:1500px;perspective-origin:50% 55%}
+#interior{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 72%,#fffaf0 0%,#fbe6b4 30%,#eebc68 62%,#c98a3a 100%)}
+#rays{position:absolute;inset:-200px;opacity:0;background:repeating-conic-gradient(from -90deg at 50% 78%,rgba(255,250,232,.55) 0deg 3deg,rgba(255,250,232,0) 3deg 9deg);-webkit-mask-image:radial-gradient(circle at 50% 78%,#000 0,#000 30%,transparent 70%);mask-image:radial-gradient(circle at 50% 78%,#000 0,#000 30%,transparent 70%)}
+.leaf{position:absolute;top:0;width:240px;height:845px}
+.leaf .shade{position:absolute;inset:0;background:#1c0d04;opacity:0}
+#leafL{left:0;transform-origin:0 50%}
+#leafR{left:240px;transform-origin:100% 50%}
+#flash{position:absolute;left:-3000px;top:-300px;width:7080px;height:2520px;opacity:0}
+#flash::before{content:"";position:absolute;left:3000px;top:300px;width:1080px;height:1920px;background:radial-gradient(circle at 50% 60%,rgba(255,226,160,.7),rgba(255,226,160,0) 60%)}
+#toranSvg{position:absolute;left:0;top:0;overflow:visible}
+#cue{position:absolute;z-index:3;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 30px);transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 20px 8px;background:color-mix(in srgb,var(--paper) 88%,transparent);border:1px solid var(--gold-line);border-radius:999px;
+  font:600 12px/1.2 var(--f-caps);letter-spacing:.18em;text-transform:uppercase;color:var(--maroon);white-space:nowrap}
+#cue svg{width:16px;height:16px;animation:bob 1.6s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(4px)}}
+/* blessings inside stage */
+#blessHead{position:absolute;left:0;width:1080px;top:300px;text-align:center;font:italic 400 35px/1.3 var(--f-serif);color:var(--maroon)}
+#deitiesBox{position:absolute;left:130px;top:372px;width:820px;height:532px}
+#halo{position:absolute;left:50%;top:50%;width:960px;height:960px;margin:-480px 0 0 -480px;border-radius:50%;background:radial-gradient(circle,rgba(246,206,120,.55) 0%,rgba(246,206,120,.18) 40%,rgba(246,206,120,0) 68%);opacity:0}
+#deities{position:relative;width:820px;height:532px;color:#8a5d1a}
+.bless-col{position:absolute;left:120px;width:840px;top:950px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.bless-col .div-art{width:520px;height:55px;color:var(--gold)}
+.bless-col .sc{font:400 96px/1.1 var(--f-script);color:var(--green);margin-top:14px}
+.bless-col .nm{font:600 50px/1.25 var(--f-serif);color:var(--maroon)}
+.bless-col .amp{font:400 64px/1 var(--f-script);color:var(--maroon)}
+.wipe-up{-webkit-mask-image:linear-gradient(to top,#000 0%,#000 calc(var(--p) - 9%),transparent calc(var(--p) + 9%));mask-image:linear-gradient(to top,#000 0%,#000 calc(var(--p) - 9%),transparent calc(var(--p) + 9%));--p:112%}
+.wipe-right{-webkit-mask-image:linear-gradient(to right,#000 0%,#000 calc(var(--p) - 7%),transparent calc(var(--p) + 7%));mask-image:linear-gradient(to right,#000 0%,#000 calc(var(--p) - 7%),transparent calc(var(--p) + 7%));--p:110%}
+
+/* ---------- sections ---------- */
+main{position:relative;z-index:1;overflow-x:clip}
+.sec{position:relative;overflow-x:clip}
+.wrap{max-width:600px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:clamp(56px,9vh,100px);
+  display:flex;flex-direction:column;align-items:center;text-align:center}
+.script{font-family:var(--f-script);font-weight:400;line-height:1.1;margin:0;text-wrap:balance}
+.caps{font:600 13px/1.4 var(--f-caps);letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin:0}
+.names{margin:0;font:600 clamp(25px,6.6vw,34px)/1.3 var(--f-serif);color:var(--maroon);text-wrap:balance}
+.names .amp{display:block;font:400 clamp(34px,9vw,46px)/1 var(--f-script);margin:2px 0}
+.lede{margin:0;font-style:italic;font-size:clamp(18px,4.8vw,21px);color:var(--ink-soft);max-width:30ch;text-wrap:balance}
+.big{font-size:clamp(62px,17vw,100px);color:var(--green)}
+.divider{width:min(300px,70%);height:auto;color:var(--gold);display:block}
+.art{display:block;width:100%;height:auto}
+.logo-wrap{width:min(440px,92%);margin-top:40px;color:var(--maroon)}
+.ele-row{position:relative;width:100%;max-width:440px;height:130px;margin-top:26px}
+.ele-row .el{position:absolute;bottom:0;width:30%;color:var(--green)}
+.ele-row #eleL{left:0}.ele-row #eleR{right:0}
+.ele-row .ka{position:absolute;bottom:0;left:50%;width:17%;transform:translateX(-50%);color:var(--maroon)}
+#hosts .wrap{gap:14px}
+#hosts .lede{margin-top:14px}
+
+/* programme */
+#programme .wrap{gap:0}
+.date-big{margin:0;font:600 clamp(28px,7.6vw,40px)/1.2 var(--f-serif);color:var(--green)}
+.tlwrap{position:relative;width:100%;max-width:460px;margin-top:40px}
+.tl{list-style:none;margin:0;padding:0;text-align:left;display:flex;flex-direction:column;gap:34px}
+.thread{position:absolute;left:45px;top:46px;bottom:46px;width:2px;background:linear-gradient(var(--gold),var(--gold-line));transform-origin:top}
+.ev{display:grid;grid-template-columns:92px minmax(0,1fr);gap:18px;align-items:center}
+.ev-ic{position:relative;z-index:1;width:92px;height:92px;border-radius:50%;background:var(--paper) var(--noise);border:1.5px solid var(--gold);display:grid;place-items:center;color:var(--maroon)}
+.ev-ic svg{width:62px;height:62px}
+.ev-t{margin:0;font:400 clamp(34px,9vw,44px)/1.05 var(--f-script);color:var(--maroon)}
+.ev-time{margin:4px 0 0;font:600 20px/1.3 var(--f-serif);color:var(--ink)}
+.ev-note{margin:2px 0 0;font:italic 400 15px/1.4 var(--f-serif);color:var(--green)}
+.count{margin-top:52px;width:100%;max-width:460px;padding:22px 0 18px;border-top:1px solid var(--gold-line);border-bottom:1px solid var(--gold-line);position:relative}
+.count::before,.count::after{content:"";position:absolute;left:0;right:0;height:1px;background:var(--gold-line)}
+.count::before{top:3px}.count::after{bottom:3px}
+.count .caps{color:var(--maroon)}
+.cells{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:12px}
+.cell b{display:block;font:600 clamp(28px,8vw,40px)/1.1 var(--f-caps);color:var(--ink);font-variant-numeric:tabular-nums}
+.cell span{font:600 10.5px/1.4 var(--f-caps);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+.count-done{margin:10px 0 0;font:italic 400 19px/1.5 var(--f-serif)}
+.actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 22px;border:1.5px solid var(--maroon);border-radius:3px;background:transparent;color:var(--maroon);
+  font:600 12.5px/1.2 var(--f-caps);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .2s,color .2s}
+.btn:hover{background:color-mix(in srgb,var(--maroon) 8%,transparent)}
+.btn.primary{background:var(--maroon);color:var(--on-maroon)}
+.btn.primary:hover{background:color-mix(in srgb,var(--maroon) 88%,#000)}
+.btn svg{width:16px;height:16px;flex:none}
+:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+
+/* venue */
+#venue .wrap{gap:10px}
+.logo-sm{width:min(250px,64%);color:var(--green);margin-top:2px}
+address{font-style:normal;font-size:clamp(18px,4.9vw,21px);line-height:1.6;margin-top:14px}
+.qr{margin:34px 0 0;padding:20px 20px 14px;background:color-mix(in srgb,#fff 45%,var(--paper));border:1.5px solid var(--gold-line);border-radius:6px}
+.qr svg{width:180px;height:180px;display:block;color:#2a1a14}
+.qr figcaption{margin-top:10px;font:italic 400 15px/1.3 var(--f-serif);color:var(--maroon)}
+.phones{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:10px;width:100%;max-width:340px}
+.phones li{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px dashed var(--gold-line)}
+.phones a{font:600 22px/1.2 var(--f-serif);color:var(--ink);text-decoration:none;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.phones a:hover{color:var(--maroon)}
+.copy{border:0;background:none;color:var(--maroon);font:600 11.5px/1 var(--f-caps);letter-spacing:.14em;text-transform:uppercase;padding:10px 4px;cursor:pointer}
+#contact .wrap{padding-top:0}
+
+/* closing */
+#close .wrap{gap:12px;padding-bottom:0}
+#close .script.m{font-size:clamp(46px,12.5vw,68px);color:var(--maroon)}
+.couple{width:min(300px,58%);color:var(--maroon);margin-top:30px}
+.cows{position:relative;width:100%;max-width:560px;height:0}
+.cows .cw{position:absolute;bottom:0;width:min(130px,24%);color:var(--green)}
+.cows .cw.l{left:0}.cows .cw.r{right:0}
+footer{position:relative;z-index:1;text-align:center;padding:36px 16px calc(env(safe-area-inset-bottom,0px) + 40px)}
+footer p{margin:10px 0 0;font:600 12px/1.5 var(--f-caps);letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
+footer svg{width:min(320px,80%);height:auto}
+#toast{position:fixed;z-index:50;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 28px);transform:translate(-50%,20px);opacity:0;transition:.25s;pointer-events:none;
+  background:var(--ink);color:var(--paper);font:600 12px/1 var(--f-caps);letter-spacing:.14em;text-transform:uppercase;padding:12px 18px;border-radius:999px}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+@media (min-width:900px){.wrap{max-width:640px}}
+@media (prefers-reduced-motion:reduce){#cue svg{animation:none}}
+</style>
+
+<svg class="sprite" aria-hidden="true" focusable="false"><defs>
+{{symbols}}
+<linearGradient id="brass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6d47a"/><stop offset=".45" stop-color="#d9a63f"/><stop offset="1" stop-color="#8f611c"/></linearGradient>
+<radialGradient id="stud" cx=".38" cy=".35" r=".7"><stop offset="0" stop-color="#fff2c4"/><stop offset=".35" stop-color="#e6b54f"/><stop offset="1" stop-color="#7d5216"/></radialGradient>
+<radialGradient id="mari" cx=".4" cy=".35" r=".75"><stop offset="0" stop-color="#ffd65c"/><stop offset=".55" stop-color="#f59a1b"/><stop offset="1" stop-color="#d4600c"/></radialGradient>
+<radialGradient id="mariY" cx=".4" cy=".35" r=".75"><stop offset="0" stop-color="#fff1a0"/><stop offset=".55" stop-color="#f7c623"/><stop offset="1" stop-color="#d99a0c"/></radialGradient>
+<linearGradient id="mango" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a6229"/><stop offset="1" stop-color="#4c963a"/></linearGradient>
+<radialGradient id="flame" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#ffffff"/><stop offset=".25" stop-color="#fff2b0"/><stop offset=".6" stop-color="#ffb52a"/><stop offset="1" stop-color="#e8580c"/></radialGradient>
+<radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd877" stop-opacity=".75"/><stop offset=".45" stop-color="#ffc85a" stop-opacity=".25"/><stop offset="1" stop-color="#ffc85a" stop-opacity="0"/></radialGradient>
+<linearGradient id="banLeaf" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2b6a2c"/><stop offset=".55" stop-color="#4b9a3c"/><stop offset="1" stop-color="#76b94c"/></linearGradient>
+<linearGradient id="banLeaf2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#245a26"/><stop offset=".6" stop-color="#3e8634"/><stop offset="1" stop-color="#5fa443"/></linearGradient>
+<linearGradient id="trunk" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7f9e3e"/><stop offset=".45" stop-color="#b9cf6a"/><stop offset="1" stop-color="#6c8c33"/></linearGradient>
+<linearGradient id="woodFrame" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4a2814"/><stop offset=".5" stop-color="#5e3419"/><stop offset="1" stop-color="#43230f"/></linearGradient>
+<linearGradient id="lintel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6a3a1c"/><stop offset="1" stop-color="#3f210e"/></linearGradient>
+<linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e3cfac"/><stop offset="1" stop-color="#d6bd92"/></linearGradient>
+<linearGradient id="spillG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe1a3" stop-opacity=".85"/><stop offset="1" stop-color="#ffe1a3" stop-opacity="0"/></linearGradient>
+<linearGradient id="woodL" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6c3d1f"/><stop offset=".3" stop-color="#85522c"/><stop offset=".62" stop-color="#6a3b1d"/><stop offset="1" stop-color="#7b4726"/></linearGradient>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="16"/></filter>
+</defs></svg>
+
+<div class="frame" aria-hidden="true"></div>
+<canvas id="petals" aria-hidden="true"></canvas>
+
+<header id="hero">
+  <div id="stage">
+    <div id="zoom">
+      <svg class="st-abs" id="doorBack" width="1080" height="1920" style="overflow:visible" aria-hidden="true"></svg>
+      <div id="doorway" aria-hidden="true">
+        <div id="interior"></div>
+        <div id="rays"></div>
+        <svg id="lamp" style="position:absolute;left:170px;top:560px" width="140" height="285" viewBox="-70 -285 140 285"></svg>
+        <div class="leaf" id="leafL"><svg width="240" height="845" id="leafLsvg"></svg><div class="shade"></div></div>
+        <div class="leaf" id="leafR"><svg width="240" height="845" id="leafRsvg"></svg><div class="shade"></div></div>
+      </div>
+      <svg class="st-abs" id="doorFront" width="1080" height="1920" style="overflow:visible" aria-hidden="true"></svg>
+      <div id="title">
+        <h1>Gruhapravesham</h1>
+        <p>Sunday · 22 November 2026</p>
+      </div>
+    </div>
+    <section id="bless" aria-label="Blessings">
+      <p id="blessHead">|| Sri Lakshmivenkateshwara Swamy Prasanna ||</p>
+      <div id="deitiesBox">
+        <div id="halo"></div>
+        <svg id="deities" class="wipe-up" viewBox="0 0 1850 1200" role="img" aria-label="Sri Lakshmi and Sri Venkateshwara"><use href="#a-deities"/></svg>
+      </div>
+      <div class="bless-col">
+        <svg class="div-art b-in" viewBox="0 0 1900 200" aria-hidden="true"><use href="#a-divider"/></svg>
+        <p class="sc b-in" style="margin-bottom:10px">With the blessings of</p>
+        <p class="nm b-in" style="margin:0">Late Smt. G. Jayalakshmi Naidu</p>
+        <p class="amp b-in" style="margin:0">&amp;</p>
+        <p class="nm b-in" style="margin:0">Late Sri A. Seethapathy Naidu</p>
+        <svg class="b-in" id="blessDiyas" width="760" height="200" viewBox="0 0 760 200" style="margin-top:28px" aria-hidden="true"></svg>
+      </div>
+    </section>
+    <div id="flash" class="paper" aria-hidden="true"></div>
+    <svg id="toranSvg" width="1080" height="240" aria-hidden="true"></svg>
+  </div>
+  <div id="cue" aria-hidden="true">Scroll to open the door
+    <svg viewBox="0 0 16 16"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+</header>
+
+<main>
+  <section class="sec" id="hosts" aria-label="Hosts">
+    <div class="wrap">
+      <h2 class="names" data-reveal>Smt. Tejashwini A.<span class="amp">&amp;</span>Sri Purushotham S. Raju</h2>
+      <p class="lede" data-reveal>solicit your gracious presence on the auspicious occasion of the</p>
+      <p class="script big" data-reveal>Gruhapravesham</p>
+      <p class="lede" data-reveal>of our newly constructed home</p>
+      <svg class="logo-wrap art wipe-right" id="logoWipe" viewBox="0 0 2525 700" role="img" aria-label="Yash Mahal"><use href="#a-logo"/></svg>
+      <div class="ele-row" aria-hidden="true">
+        <svg class="el art" id="eleL" viewBox="0 0 475 425"><use href="#a-elephant"/></svg>
+        <svg class="ka art" id="kalashaH" viewBox="0 0 350 500"><use href="#a-kalasha"/></svg>
+        <svg class="el art" id="eleR" viewBox="0 0 475 425" style="transform:scaleX(-1)"><use href="#a-elephant"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="programme" aria-label="Programme">
+    <div class="wrap">
+      <svg class="divider" viewBox="0 0 1900 200" aria-hidden="true" data-reveal><use href="#a-divider"/></svg>
+      <p class="script" style="font-size:clamp(60px,16vw,92px);color:var(--maroon);margin-top:14px" data-reveal>Sunday</p>
+      <p class="date-big" data-reveal>22 November 2026</p>
+      <div class="tlwrap"><span class="thread" aria-hidden="true"></span>
+      <ol class="tl">
+        <li class="ev" data-reveal>
+          <div class="ev-ic"><svg viewBox="0 0 1425 1525" aria-hidden="true"><use href="#a-couple"/></svg></div>
+          <div><h3 class="ev-t">Gruhapravesha</h3><p class="ev-time">5:15 AM – 5:45 AM</p><p class="ev-note">Shubha Brahmi Muhurtha, Tula Lagna</p></div>
+        </li>
+        <li class="ev" data-reveal>
+          <div class="ev-ic"><svg viewBox="0 0 350 500" aria-hidden="true"><use href="#a-kalasha"/></svg></div>
+          <div><h3 class="ev-t">Sri Sathyanarayan Swamy Pooja</h3><p class="ev-time">7:30 AM onwards</p></div>
+        </li>
+        <li class="ev" data-reveal>
+          <div class="ev-ic"><svg viewBox="0 0 600 350" aria-hidden="true" style="width:66px"><use href="#a-cloche"/></svg></div>
+          <div><h3 class="ev-t">Lunch</h3><p class="ev-time">12:00 PM onwards</p></div>
+        </li>
+      </ol></div>
+      <div class="count" data-reveal>
+        <p class="caps" id="countLabel">The muhurtha begins in</p>
+        <div class="cells" id="cells">
+          <div class="cell"><b id="cd">--</b><span>Days</span></div>
+          <div class="cell"><b id="ch">--</b><span>Hours</span></div>
+          <div class="cell"><b id="cm">--</b><span>Minutes</span></div>
+          <div class="cell"><b id="cs">--</b><span>Seconds</span></div>
+        </div>
+        <p class="count-done" id="countDone" hidden>The muhurtha has begun. Thank you for blessing Yash Mahal.</p>
+      </div>
+      <div class="actions" data-reveal>
+        <a class="btn" id="calBtn" target="_blank" rel="noopener" href="#">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3" width="12" height="11" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M2 6.5h12M5 1.5v3M11 1.5v3" stroke="currentColor" stroke-width="1.5"/></svg>
+          Add to Google Calendar</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="venue" aria-label="Venue">
+    <div class="wrap">
+      <p class="script" style="font-size:clamp(60px,16vw,92px);color:var(--maroon)" data-reveal>Venue</p>
+      <svg class="logo-sm art" viewBox="0 0 2525 700" role="img" aria-label="Yash Mahal" data-reveal><use href="#a-logo"/></svg>
+      <address id="addr" data-reveal>No. 151, 1st Cross, Hollywood Town,<br>Opp. to Aham Aathma School,<br>Nelagadaranahalli, Bangalore – 560073</address>
+      <div class="actions" data-reveal>
+        <a class="btn primary" target="_blank" rel="noopener" href="https://maps.app.goo.gl/mp86SFDFe3NicHRVA">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 15s5-4.6 5-8.5A5 5 0 0 0 3 6.5C3 10.4 8 15 8 15z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="8" cy="6.5" r="1.8" fill="currentColor"/></svg>
+          Open in Google Maps</a>
+        <button class="btn" type="button" id="copyAddr">Copy address</button>
+      </div>
+      <figure class="qr" data-reveal>
+        <svg viewBox="0 0 29 29" shape-rendering="crispEdges" role="img" aria-label="QR code for the venue location"><use href="#a-qr"/></svg>
+        <figcaption>Scan for venue location</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec" id="contact" aria-label="Contact">
+    <div class="wrap">
+      <p class="caps" data-reveal>Contact</p>
+      <ul class="phones" data-reveal>
+        <li><a href="tel:+919731550880">97315 50880</a><button class="copy" type="button" data-copy="9731550880">Copy</button></li>
+        <li><a href="tel:+919620650880">96206 50880</a><button class="copy" type="button" data-copy="9620650880">Copy</button></li>
+        <li><a href="tel:+919731720880">97317 20880</a><button class="copy" type="button" data-copy="9731720880">Copy</button></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" id="close" aria-label="With best compliments">
+    <div class="wrap">
+      <p class="script m" data-reveal>Cordially invite you &amp; your family</p>
+      <svg class="divider" viewBox="0 0 1900 200" aria-hidden="true" data-reveal style="margin-top:8px"><use href="#a-divider"/></svg>
+      <p class="caps" data-reveal style="margin-top:10px">With best compliments from</p>
+      <p class="names" data-reveal>Smt. Tejashwini A. &amp;<br>Sri Purushotham S. Raju</p>
+      <p class="names" data-reveal>Prince Yashmith P.</p>
+      <p class="lede" data-reveal>Relatives &amp; Friends</p>
+      <svg class="couple art wipe-up" id="coupleWipe" viewBox="0 0 1425 1525" aria-hidden="true"><use href="#a-couple"/></svg>
+      <div class="cows" aria-hidden="true">
+        <svg class="cw l art" viewBox="0 0 950 1050" id="cowL"><use href="#a-cow"/></svg>
+        <svg class="cw r art" viewBox="0 0 950 1050" id="cowR" style="transform:scaleX(-1)"><use href="#a-cow"/></svg>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <svg id="footSwag" viewBox="0 0 320 70" aria-hidden="true"></svg>
+  <p>Yash Mahal · 22 · 11 · 2026</p>
+</footer>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const REDUCE=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function rnd(seed){let s=seed>>>0;return()=>{s=(s*1664525+1013904223)>>>0;return s/4294967296}}
+const f=v=>v.toFixed(1);
+
+/* ---------- drawing helpers ---------- */
+function marigold(x,y,r,yellow){return `<circle cx="${f(x)}" cy="${f(y)}" r="${r}" fill="url(#${yellow?'mariY':'mari'})"/><circle cx="${f(x)}" cy="${f(y)}" r="${(r*.72).toFixed(1)}" fill="none" stroke="${yellow?'#c98a08':'#b94b06'}" stroke-width="1.6" stroke-dasharray="2 3" opacity=".7"/>`}
+function mangoLeaf(L){const w=L*.2;return `<path d="M0,0 C${w},${L*.13} ${w*1.15},${L*.55} 0,${L} C${-w*1.15},${L*.55} ${-w},${L*.13} 0,0Z" fill="url(#mango)"/><path d="M0,${L*.05} L0,${L*.92}" stroke="#a9c870" stroke-width="1.6" opacity=".8"/>`}
+function diya(cx,cy,s){return `<g transform="translate(${cx},${cy}) scale(${s})">
+  <circle cx="0" cy="-40" r="95" fill="url(#glow)"/><ellipse cx="0" cy="22" rx="40" ry="9" fill="#6b4413" opacity=".55"/>
+  <path d="M-16,20 L-10,4 L10,4 L16,20Z" fill="url(#brass)"/><path d="M-46,-6 Q0,40 46,-6 Z" fill="url(#brass)"/>
+  <ellipse cx="0" cy="-6" rx="46" ry="9" fill="#f3cf72"/><ellipse cx="0" cy="-6" rx="38" ry="6" fill="#7a4d12"/>
+  <path d="M30,-8 Q52,-14 56,-24 Q46,-10 30,-4Z" fill="#e2b04a"/><line x1="34" y1="-10" x2="44" y2="-20" stroke="#3a2210" stroke-width="3"/>
+  <g transform="translate(44,-20)"><g class="flame"><path d="M0,-52 C14,-30 14,-10 0,0 C-14,-10 -14,-30 0,-52Z" fill="url(#flame)"/></g></g></g>`}
+function banana(x,y,flip){
+  const leaves=[[-163,300,.36],[-132,390,.34],[-102,430,.32],[-72,390,.34],[-40,290,.36]];
+  let s=`<g transform="translate(${x},${y}) scale(${flip?-1:1},1)"><path d="M-27,0 C-25,-200 -21,-380 -16,-515 L16,-515 C21,-380 25,-200 27,0Z" fill="url(#trunk)"/>`;
+  for(let i=0;i<6;i++){const xx=-18+i*7;s+=`<path d="M${xx},0 C${xx+1},-170 ${xx*.6},-360 ${xx*.55},-510" stroke="#6e8c34" stroke-width="1.4" fill="none" opacity=".5"/>`}
+  leaves.forEach(([a,L,wr],k)=>{
+    const W=L*wr,r=a*Math.PI/180,dx=Math.cos(r),dy=Math.sin(r),droop=L*.42*Math.abs(dx)+L*.08;
+    const P1=[dx*L*.55,dy*L*.55-L*.05],P2=[dx*L,dy*L+droop],N=24,mid=[],up=[],lo=[];
+    for(let i=0;i<=N;i++){const u=i/N,px=2*u*(1-u)*P1[0]+u*u*P2[0],py=2*u*(1-u)*P1[1]+u*u*P2[1],tx=2*(1-u)*P1[0]+2*u*(P2[0]-P1[0]),ty=2*(1-u)*P1[1]+2*u*(P2[1]-P1[1]),tl=Math.hypot(tx,ty)||1,nx=-ty/tl,ny=tx/tl,w=W*Math.pow(Math.sin(Math.PI*Math.min(1,u*1.08)),.62)*(1-.25*u)*.5;
+      mid.push([px,py]);up.push([px+nx*w*1.05,py+ny*w*1.05]);lo.push([px-nx*w*.95,py-ny*w*.95])}
+    const d='M0,0 '+up.map(p=>`L${f(p[0])},${f(p[1])}`).join(' ')+' '+lo.slice().reverse().map(p=>`L${f(p[0])},${f(p[1])}`).join(' ')+'Z';
+    let v='';for(let j=3;j<N-1;j+=2){const m=mid[j],e1=up[Math.min(N,j+2)],e2=lo[Math.min(N,j+2)];v+=`M${f(m[0])},${f(m[1])} L${f(e1[0])},${f(e1[1])} M${f(m[0])},${f(m[1])} L${f(e2[0])},${f(e2[1])} `}
+    s+=`<g transform="translate(0,-505)"><g class="bleaf" data-k="${k}"><path d="${d}" fill="url(#${k%2?'banLeaf2':'banLeaf'})"/><path d="${v}" stroke="#dff2a8" stroke-width="1.3" opacity=".25" fill="none"/><path d="M0,0 ${mid.map(p=>`L${f(p[0])},${f(p[1])}`).join(' ')}" stroke="#d6e58c" stroke-width="3.4" fill="none"/></g></g>`;
+  });
+  return s+'</g>';
+}
+function kolam(cx,cy){
+  let s=`<g transform="translate(${cx},${cy}) scale(1,.34)"><g id="kolamInner">`;
+  for(let i=0;i<48;i++){const a=i/48*Math.PI*2;s+=`<circle cx="${f(Math.cos(a)*262)}" cy="${f(Math.sin(a)*262)}" r="6" fill="#fffaf0"/>`}
+  for(let i=0;i<16;i++)s+=`<ellipse transform="rotate(${i*22.5}) translate(205,0)" rx="44" ry="20" fill="#7a1d2b" stroke="#fffaf0" stroke-width="5"/>`;
+  for(let i=0;i<16;i++)s+=`<ellipse transform="rotate(${i*22.5+11.25}) translate(175,0)" rx="14" ry="9" fill="#2f5a3a" stroke="#fffaf0" stroke-width="3"/>`;
+  for(let i=0;i<8;i++)s+=`<ellipse transform="rotate(${i*45}) translate(115,0)" rx="68" ry="30" fill="#e8781a" stroke="#fffaf0" stroke-width="5"/>`;
+  for(let i=0;i<8;i++)s+=`<ellipse transform="rotate(${i*45+22.5}) translate(58,0)" rx="40" ry="18" fill="#f2c230" stroke="#fffaf0" stroke-width="4"/>`;
+  return s+`<circle r="32" fill="#2f5a3a" stroke="#fffaf0" stroke-width="5"/><circle r="9" fill="#fffaf0"/></g></g>`;
+}
+
+/* ---------- door scene ---------- */
+(function(){
+  let s=`<rect x="-3000" y="1545" width="7080" height="600" fill="url(#floor)"/>`;
+  s+=`<clipPath id="flc"><rect x="-3000" y="1545" width="7080" height="600"/></clipPath><g stroke="#bf9f6c" stroke-width="1.4" opacity=".5" clip-path="url(#flc)">`;
+  for(let i=-30;i<=30;i++)s+=`<line x1="540" y1="1100" x2="${540+i*170}" y2="2200"/>`;
+  [1600,1668,1752,1858].forEach(y=>s+=`<line x1="-3000" y1="${y}" x2="4080" y2="${y}"/>`);
+  s+=`</g><rect x="-3000" y="1545" width="7080" height="70" fill="#e3cfac" opacity=".55"/>`;
+  s+=`<rect x="232" y="545" width="616" height="1010" fill="#3b2412" opacity=".28" filter="url(#soft)"/>`;
+  s+=`<polygon id="spill" points="300,1575 780,1575 960,1990 120,1990" fill="url(#spillG)" opacity="0"/>`;
+  $('#doorBack').innerHTML=s;
+})();
+function leafSVG(side){
+  let s=`<rect width="240" height="845" fill="url(#woodL)"/>`;const r=rnd(side==='L'?11:23);
+  for(let i=0;i<9;i++){const x=12+i*26+r()*8;s+=`<path d="M${f(x)},0 C${f(x+r()*10-5)},200 ${f(x+r()*12-6)},500 ${f(x+r()*8-4)},845" stroke="#4a260f" stroke-width="${(1+r()).toFixed(2)}" fill="none" opacity=".22"/>`}
+  s+=`<rect x="2" y="2" width="236" height="841" fill="none" stroke="#3a1d0b" stroke-width="5"/>`;
+  [[44,226],[312,248],[602,200]].forEach(([y,h])=>{s+=`<rect x="30" y="${y}" width="180" height="${h}" fill="#000" opacity=".1"/><rect x="30" y="${y}" width="180" height="${h}" fill="none" stroke="#40210c" stroke-width="3"/><path d="M40,${y+h-10} L40,${y+10} L200,${y+10}" stroke="#a46d3d" stroke-width="2" fill="none" opacity=".75"/><path d="M40,${y+h-10} L200,${y+h-10} L200,${y+10}" stroke="#2c1406" stroke-width="2" fill="none" opacity=".6"/><circle cx="120" cy="${y+h/2}" r="13" fill="url(#stud)"/><circle cx="120" cy="${y+h/2}" r="21" fill="none" stroke="#c99a40" stroke-width="2" opacity=".8"/>`});
+  [22,288,578,822].forEach(y=>{for(let x=24;x<=216;x+=32)s+=`<circle cx="${x}" cy="${y}" r="7" fill="url(#stud)"/>`});
+  const kx=side==='L'?204:36;s+=`<circle cx="${kx}" cy="470" r="10" fill="url(#stud)"/><circle cx="${kx}" cy="494" r="22" fill="none" stroke="url(#brass)" stroke-width="6"/>`;
+  return s;
+}
+$('#leafLsvg').innerHTML=leafSVG('L');$('#leafRsvg').innerHTML=leafSVG('R');
+$('#lamp').innerHTML=`<circle cx="0" cy="-232" r="120" fill="url(#glow)"/><ellipse cx="0" cy="-8" rx="62" ry="10" fill="#8a5a1c" opacity=".5"/><path d="M-52,-6 Q0,-34 52,-6 L44,0 L-44,0Z" fill="url(#brass)"/><rect x="-7" y="-200" width="14" height="190" fill="url(#brass)"/><circle cx="0" cy="-120" r="11" fill="url(#brass)"/><circle cx="0" cy="-60" r="9" fill="url(#brass)"/><path d="M-46,-206 Q0,-180 46,-206 Z" fill="url(#brass)"/><ellipse cx="0" cy="-206" rx="46" ry="7" fill="#f2cf74"/><path d="M0,-212 L-6,-232 L0,-246 L6,-232Z" fill="#c99a40"/>`+[-40,0,40].map(x=>`<g transform="translate(${x},-208)"><g class="flame"><path d="M0,-34 C9,-20 9,-6 0,0 C-9,-6 -9,-20 0,-34Z" fill="url(#flame)"/></g></g>`).join('');
+(function(){
+  let s=`<path d="M250,650 H830 V1545 H250Z M300,700 V1545 H780 V700Z" fill="url(#woodFrame)" fill-rule="evenodd"/><path d="M262,1545 V662 H818 V1545" stroke="#c9a24a" stroke-width="1.6" fill="none" opacity=".7"/><path d="M290,1545 V690 H790 V1545" stroke="#c9a24a" stroke-width="1.6" fill="none" opacity=".7"/>`;
+  for(let y=720;y<1530;y+=32)s+=`<circle cx="276" cy="${y}" r="3.4" fill="#d6ad52" opacity=".85"/><circle cx="804" cy="${y}" r="3.4" fill="#d6ad52" opacity=".85"/>`;
+  s+=`<rect x="226" y="1540" width="628" height="40" fill="#5f4a3c"/><rect x="226" y="1540" width="628" height="6" fill="#86705f"/>`;
+  for(let x=256;x<=800;x+=58)s+=`<rect x="${x-10}" y="1550" width="20" height="24" fill="#e9b419"/><circle cx="${x+29}" cy="1562" r="7" fill="#c1121f"/>`;
+  s+=`<rect x="200" y="538" width="680" height="24" fill="#3a1e0c"/>`;for(let x=206;x<874;x+=20)s+=`<rect x="${x}" y="562" width="11" height="10" fill="#4f2b13"/>`;
+  s+=`<rect x="215" y="572" width="650" height="80" fill="url(#lintel)"/><rect x="226" y="582" width="628" height="60" fill="none" stroke="#c9a24a" stroke-width="1.6" opacity=".75"/>`;
+  for(let x=246;x<840;x+=26)if(Math.abs(x-540)>80)s+=`<path d="M${x},612 l6,-8 l6,8 l-6,8z" fill="#c9a24a" opacity=".55"/>`;
+  s+=`<circle cx="540" cy="586" r="70" fill="#3d200d" stroke="url(#brass)" stroke-width="6"/><circle cx="540" cy="586" r="60" fill="none" stroke="#c9a24a" stroke-width="1.5"/><svg x="497" y="532" width="86" height="106" viewBox="0 0 625 775" color="#e8c060"><use href="#a-ganesha"/></svg>`;
+  for(let i=0;i<12;i++)s+=`<g transform="translate(${318+i*40},650)"><g class="tl2">${mangoLeaf(i%2?66:76)}</g></g>`;
+  for(let i=0;i<=26;i++){const u=i/26;s+=marigold((1-u)*(1-u)*298+2*u*(1-u)*540+u*u*782,(1-u)*(1-u)*660+2*u*(1-u)*792+u*u*660,12,i%2)}
+  [262,818].forEach(x=>{for(let j=0;j<10;j++)s+=marigold(x,672+j*23,11.5,j%2===0);s+=`<path d="M${x},902 l-8,26 l16,0z" fill="#c1121f"/>`});
+  s+=marigold(250,650,15,1)+marigold(830,650,15,1)+banana(130,1560,false)+banana(950,1560,true)+diya(196,1660,1.05)+diya(884,1660,1.05)+kolam(540,1750);
+  $('#doorFront').innerHTML=s;
+})();
+$('#blessDiyas').innerHTML=diya(150,130,.95)+diya(610,130,.95)+(()=>{let g='';for(let i=0;i<=14;i++){const u=i/14;g+=marigold((1-u)*(1-u)*230+2*u*(1-u)*380+u*u*530,(1-u)*(1-u)*60+2*u*(1-u)*170+u*u*60,12,i%2)}return g})();
+(function(){
+  let s=`<path d="M-3000,62 H4080" stroke="#8a5d1a" stroke-width="5" fill="none"/><path d="M-3000,62 H4080" stroke="#e6c26a" stroke-width="2" stroke-dasharray="6 6" fill="none"/>`;
+  const step=39.33;let i=0;
+  for(let x=68-step*80;x<4080;x+=step,i++){
+    const inner=i%2===0?mangoLeaf(i%4===0?104:92):(marigold(0,14,12,i%4===1)+marigold(0,38,13.5,i%4===3)+`<path d="M0,52 l-6,16 l12,0z" fill="#c1121f"/>`);
+    s+=`<g transform="translate(${f(x)},62)"><g class="tt">${inner}</g></g>`;
+  }
+  $('#toranSvg').innerHTML=s;
+})();
+$('#footSwag').innerHTML=(()=>{let g='';for(let i=0;i<=16;i++){const u=i/16;g+=marigold((1-u)*(1-u)*16+2*u*(1-u)*160+u*u*304,(1-u)*(1-u)*12+2*u*(1-u)*90+u*u*12,9,i%2)}return g})();
+
+/* ---------- stage fit ---------- */
+const hero=$('#hero'),stage=$('#stage');
+function fit(){
+  const vw=hero.clientWidth,vh=hero.clientHeight,r=vw/vh;
+  const s=r<0.66?Math.max(vw/1080,vh/1920):Math.min(vw/1080,vh/1920);
+  stage.style.transform=`translate(${(vw-1080*s)/2}px,${(vh-1920*s)/2}px) scale(${s})`;
+}
+fit();
+
+/* ---------- ambient motion ---------- */
+const flames=$$('.flame'),tts=$$('#toranSvg .tt'),tls=$$('.tl2'),bls=$$('.bleaf'),halo=$('#halo');
+const cv=$('#petals'),cx=cv.getContext('2d');let W=0,H=0;const P=[];
+function sizeCv(){const d=Math.min(2,devicePixelRatio||1);W=innerWidth;H=innerHeight;cv.width=W*d;cv.height=H*d;cv.style.width=W+'px';cv.style.height=H+'px';cx.setTransform(d,0,0,d,0,0)}
+sizeCv();
+{const r=rnd(5),cols=['#f59a1b','#f7c623','#e8700f','#c1121f','#f5b041'];for(let i=0;i<14;i++)P.push({x:r(),y:r(),s:.7+r()*.7,v:18+r()*26,a:r()*6.3,va:(r()-.5)*1.4,ph:r()*6.3,amp:14+r()*26,c:cols[i%5]})}
+let heroVisible=true;
+function frame(ms){
+  const t=ms/1000;
+  if(heroVisible){
+    flames.forEach((el,i)=>el.setAttribute('transform',`scale(${(1-Math.sin(t*9+i*2.1)*.05).toFixed(3)},${(1+Math.sin(t*11+i*1.7)*.07+Math.sin(t*23+i)*.04).toFixed(3)}) skewX(${(Math.sin(t*6.5+i*1.3)*5).toFixed(2)})`));
+    tts.forEach((g,i)=>g.setAttribute('transform',`rotate(${(Math.sin(t*1.5+i*.55)*4.5).toFixed(2)})`));
+    tls.forEach((g,i)=>g.setAttribute('transform',`rotate(${(Math.sin(t*1.7+i*.6)*5).toFixed(2)})`));
+    bls.forEach(g=>g.setAttribute('transform',`rotate(${(Math.sin(t*1.1+(+g.dataset.k)*.9)*2.2).toFixed(2)})`));
+    halo.style.transform=`scale(${(1+Math.sin(t*1.4)*.04).toFixed(3)})`;
+  }
+  cx.clearRect(0,0,W,H);
+  P.forEach(p=>{const y=((p.y*H+t*p.v)%(H+60))-30,x=p.x*W+Math.sin(t*.6+p.ph)*p.amp;cx.save();cx.translate(x,y);cx.rotate(p.a+t*p.va);cx.globalAlpha=.7;cx.fillStyle=p.c;cx.beginPath();cx.ellipse(0,0,4.5*p.s,7.5*p.s,0,0,Math.PI*2);cx.fill();cx.restore()});
+  requestAnimationFrame(frame);
+}
+if(!REDUCE)requestAnimationFrame(frame);
+
+/* ---------- countdown + calendar ---------- */
+const TARGET=new Date('2026-11-22T05:15:00+05:30').getTime();
+function tick(){
+  const d=TARGET-Date.now();
+  if(d<=0){$('#cells').hidden=true;$('#countLabel').hidden=true;$('#countDone').hidden=false;return}
+  const pad=n=>String(n).padStart(2,'0');
+  $('#cd').textContent=Math.floor(d/864e5);$('#ch').textContent=pad(Math.floor(d/36e5)%24);$('#cm').textContent=pad(Math.floor(d/6e4)%60);$('#cs').textContent=pad(Math.floor(d/1e3)%60);
+}
+tick();setInterval(tick,1000);
+const cal=new URLSearchParams({action:'TEMPLATE',text:'Gruhapravesham at Yash Mahal',dates:'20261121T234500Z/20261122T080000Z',
+  details:'Gruhapravesha 5:15 AM to 5:45 AM\nSri Sathyanarayan Swamy Pooja 7:30 AM onwards\nLunch 12:00 PM onwards\n\nHosted by Smt. Tejashwini A. & Sri Purushotham S. Raju\nMap: https://maps.app.goo.gl/mp86SFDFe3NicHRVA',
+  location:'Yash Mahal, No. 151, 1st Cross, Hollywood Town, Opp. to Aham Aathma School, Nelagadaranahalli, Bangalore 560073'});
+$('#calBtn').href='https://calendar.google.com/calendar/render?'+cal.toString();
+
+/* ---------- copy ---------- */
+const toast=$('#toast');let tt;
+function say(m){toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('on'),1800)}
+function selectEl(el){const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r)}
+function copy(text,el){
+  try{navigator.clipboard.writeText(text).then(()=>say('Copied'),()=>{selectEl(el);say('Selected. Copy it from here')})}
+  catch(e){selectEl(el);say('Selected. Copy it from here')}
+}
+$('#copyAddr').addEventListener('click',()=>copy('Yash Mahal, No. 151, 1st Cross, Hollywood Town, Opp. to Aham Aathma School, Nelagadaranahalli, Bangalore - 560073',$('#addr')));
+$$('.copy').forEach(b=>b.addEventListener('click',()=>copy(b.dataset.copy,b.previousElementSibling)));
+
+/* ---------- scroll story ---------- */
+if(!window.gsap||!window.ScrollTrigger){$('#zoom').style.display='none';$('#bless').style.visibility='visible';$('#cue').hidden=true;return}
+gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.config({ignoreMobileResize:true});
+const tl=gsap.timeline({defaults:{ease:'none'},scrollTrigger:{trigger:'#hero',start:'top top',end:'+=340%',scrub:REDUCE?true:.6,pin:true,anticipatePin:1,
+  onToggle:self=>{heroVisible=self.isActive||self.progress<1}}});
+tl.to('#cue',{autoAlpha:0,duration:.05},0)
+  .to('#leafL',{rotationY:82,duration:.32,ease:'power1.inOut'},.04)
+  .to('#leafR',{rotationY:-82,duration:.32,ease:'power1.inOut'},.04)
+  .to('.leaf .shade',{opacity:.5,duration:.32},.04)
+  .to('#rays',{opacity:1,duration:.25},.12)
+  .to('#spill',{opacity:1,duration:.25},.12)
+  .to('#title',{autoAlpha:0,y:-40,duration:.1},.26);
+if(!REDUCE)tl.to('#zoom',{scale:5.2,transformOrigin:'540px 1300px',duration:.26,ease:'power2.in'},.36);
+tl.to('#flash',{opacity:1,duration:.12},REDUCE?.4:.52)
+  .set('#zoom',{autoAlpha:0},.64).set('#bless',{autoAlpha:1},.64)
+  .to('#flash',{opacity:0,duration:.1},.64)
+  .fromTo('#blessHead',{autoAlpha:0,y:30},{autoAlpha:1,y:0,duration:.06},.66)
+  .fromTo('#deities',{'--p':'-12%'},{'--p':'112%',duration:.16},.68)
+  .fromTo('#halo',{opacity:0},{opacity:1,duration:.12},.7)
+  .fromTo('.b-in',{autoAlpha:0,y:30},{autoAlpha:1,y:0,duration:.06,stagger:.03},.8)
+  .to({},{duration:.04},.96);
+
+$$('[data-reveal]').forEach(el=>gsap.from(el,{autoAlpha:0,y:REDUCE?0:26,duration:.9,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 92%',once:true}}));
+gsap.fromTo('#logoWipe',{'--p':'-10%'},{'--p':'110%',ease:'none',scrollTrigger:{trigger:'#logoWipe',start:'top 88%',end:'top 50%',scrub:.5}});
+if(!REDUCE){
+  const bob=self=>{const r=Math.sin(self.progress*Math.PI*8)*3*(1-self.progress);gsap.set('#eleL',{rotation:r});gsap.set('#eleR',{rotation:-r})};
+  gsap.fromTo('#eleL',{xPercent:-160},{xPercent:0,ease:'none',scrollTrigger:{trigger:'.ele-row',start:'top 100%',end:'top 58%',scrub:.6,onUpdate:bob}});
+  gsap.fromTo('#eleR',{xPercent:160},{xPercent:0,ease:'none',scrollTrigger:{trigger:'.ele-row',start:'top 100%',end:'top 58%',scrub:.6}});
+  gsap.from('#kalashaH',{autoAlpha:0,y:20,duration:.8,scrollTrigger:{trigger:'.ele-row',start:'top 70%',once:true}});
+}
+gsap.fromTo('.thread',{scaleY:0},{scaleY:1,ease:'none',scrollTrigger:{trigger:'.tlwrap',start:'top 72%',end:'bottom 62%',scrub:.4}});
+gsap.fromTo('#coupleWipe',{'--p':'-12%'},{'--p':'112%',ease:'none',scrollTrigger:{trigger:'#coupleWipe',start:'top 92%',end:'top 48%',scrub:.5}});
+gsap.from('.cw',{autoAlpha:0,y:20,duration:1,stagger:.15,scrollTrigger:{trigger:'.cows',start:'top 98%',once:true}});
+
+let lastW=innerWidth;
+addEventListener('resize',()=>{sizeCv();if(Math.abs(innerWidth-lastW)>40){lastW=innerWidth;fit();ScrollTrigger.refresh()}else fit()});
+document.fonts&&document.fonts.ready.then(()=>ScrollTrigger.refresh());
+})();
+</script>

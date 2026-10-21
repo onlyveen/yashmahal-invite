@@ -1,0 +1,16 @@
+{
+  "name": "yashmahal-invite-video",
+  "private": true,
+  "description": "Frame-accurate renderer for the Yash Mahal video invite",
+  "scripts": {
+    "build": "python3 build.py",
+    "render": "python3 build.py && mkdir -p out && node render.mjs video out/yash-mahal-invite.mp4"
+  },
+  "dependencies": {
+    "@fontsource/cinzel": "^5.0.0",
+    "@fontsource/great-vibes": "^5.0.0",
+    "@fontsource/lora": "^5.0.0",
+    "gsap": "3.12.5",
+    "playwright": "1.48.2"
+  }
+}
